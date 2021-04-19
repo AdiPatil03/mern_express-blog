@@ -1,6 +1,5 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import cors from 'cors';
 import path from 'path';
 import {MongoClient} from 'mongodb';
 import _ from 'lodash';
@@ -8,7 +7,6 @@ import ArticleService from './article-services';
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
 app.use(express.static(path.join(__dirname, '/build')));
 
 const articleService = new ArticleService();
@@ -216,4 +214,4 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname + '/build/index.html'));
 });
 
-app.listen('8000', () => console.log('listening port 8000!'));
+app.listen('3010', () => console.log('listening port 3010!'));
