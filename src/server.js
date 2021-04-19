@@ -106,32 +106,6 @@ app.get('/api/all-articles', async (req, res) => {
     }, res);
 });
 
-// app.get('/api/all-tags', async (req, res) => {
-//     withDB(async db => {
-//         const articles = await db.collection('articles').find({}).toArray();
-
-//         const tags = articleService.allTags(articles);
-//         if (tags && tags.length > 0) {
-//             res.status(200).json([...tags]);
-//         } else {
-//             res.status(400).json({message: 'There was an error while retrieving the tags.'});
-//         }
-//     }, res);
-// });
-
-// app.get('/api/all-archives', async (req, res) => {
-//     withDB(async db => {
-//         const articles = await db.collection('articles').find({}).toArray();
-
-//         const archives = articleService.allArchives(articles);
-//         if (archives && archives.length > 0) {
-//             res.status(200).json([...archives]);
-//         } else {
-//             res.status(400).json({message: 'There was an error while retrieving the tags.'});
-//         }
-//     }, res);
-// });
-
 app.get('/api/article/:name', async (req, res) => {
     withDB(async db => {
         const slug = req.params.name;
