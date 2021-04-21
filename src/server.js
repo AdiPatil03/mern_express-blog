@@ -7,7 +7,7 @@ import ArticleService from './article-services';
 
 const app = express();
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, '/build')));
+// app.use(express.static(path.join(__dirname, '/build')));
 
 const articleService = new ArticleService();
 
@@ -98,10 +98,10 @@ app.get('/api/all-articles', async (req, res) => {
         const articles = await db.collection('articles').find({}).toArray();
 
         const initialData = articleService.allArticles(articles);
-        if (initialData) {
+        if (!_.isUndefined(initialData)) {
             res.status(200).json({...initialData});
         } else {
-            res.status(400).json({message: 'There was an error retrieving the articles.'});
+            res.status(400).json({message: 'No article written yet. Please Log In to write your first article.'});
         }
     }, res);
 });
@@ -184,8 +184,8 @@ app.post('/api/article/:name/add-comment', async (req, res) => {
     }, res);
 });
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/build/index.html'));
-});
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname + '/build/index.html'));
+// });
 
 app.listen('3010', () => console.log('listening port 3010!'));
