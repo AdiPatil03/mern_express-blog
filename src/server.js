@@ -20,7 +20,7 @@ const withDB = async (operations, res) => {
 
         client.close();
     } catch(error) {
-        res.status(500).json({message: 'Error connecting to db', error});
+        res.status(500).json({message: 'db-connection', error});
     }
 };
 
@@ -33,7 +33,7 @@ app.post('/api/login', async (req, res) => {
         if (!_.isNull(userInfo)) {
             res.status(200).json({user: userInfo.username});
         } else {
-            res.status(400).json({message: 'Invalid credentials.'});    
+            res.status(400).json({message: 'invalid-credentials'});    
         }
     }, res);
 
@@ -51,7 +51,7 @@ app.post('/api/signup', async (req, res) => {
                 res.status(200).json({user: username});
             }
         } else {
-            res.status(400).json({message: 'This user already exists.'});
+            res.status(400).json({message: 'user-exists'});
         }
     }, res);
 
@@ -88,7 +88,7 @@ app.post('/api/update-article/:name', async (req, res) => {
             });
             res.status(200).json({slug: newSlug});
         } else {
-            res.status(400).json({message: 'There was an error while updating the article.'});
+            res.status(400).json({message: 'update-failed'});
         }
     }, res);
 });
@@ -101,7 +101,7 @@ app.get('/api/all-articles', async (req, res) => {
         if (!_.isUndefined(initialData)) {
             res.status(200).json({...initialData});
         } else {
-            res.status(400).json({message: 'No article written yet. Please Log In to write your first article.'});
+            res.status(400).json({message: 'no-article-written'});
         }
     }, res);
 });
@@ -112,7 +112,7 @@ app.get('/api/article/:name', async (req, res) => {
         
         const articleInfo = await db.collection('articles').findOne({slug});
         if (_.isNull(articleInfo)) {
-            res.status(400).json({message: 'Article not found.'});
+            res.status(400).json({message: 'article-not-found'});
         } else {
             res.status(200).json(articleInfo);
         }
@@ -129,7 +129,7 @@ app.get('/api/tag/:name', async (req, res) => {
         if (articles && articles.length > 0) {
             res.status(200).json([...articles]);
         } else{
-            res.status(400).json({message: `There was an error retrieving the articles for ${tagName} tag`});
+            res.status(400).json({message: `article-not-found`});
         }
     }, res);
 
@@ -144,7 +144,7 @@ app.get('/api/archive/:name', async (req, res) => {
         if (articles && articles.length > 0) {
             res.status(200).json([...articles]);
         } else{
-            res.status(400).json({message: `There was an error retrieving the articles for ${archiveName} archive`});
+            res.status(400).json({message: `article-not-found`});
         }
     }, res);
 
