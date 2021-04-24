@@ -70,7 +70,7 @@ export default class ArticleService {
 	}
 
 	articlesByTag(articles, tag) {
-        if (articles.length > 0) {  
+        if (articles.length > 0) {
             return articles.filter(article => article.tags.includes(tag)).sort((a,b) => b.createdAt - a.createdAt);
         } 
         return;
