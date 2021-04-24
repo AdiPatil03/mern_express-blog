@@ -1,4 +1,6 @@
 import express from 'express';
+import articles from './resources/articles.json';
+import users from './resources/users.json';
 import bodyParser from 'body-parser';
 import path from 'path';
 import {MongoClient} from 'mongodb';
@@ -24,10 +26,22 @@ const withDB = async (operations, res) => {
     }
 };
 
+const loadData = async () => {
+    const client = await MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true, useUnifiedTopology: true});
+    const db = client.db('mern-blog');
+
+    await db.collection('users').insertMany(users);
+    await db.collection('articles').insertMany(articles);
+
+    client.close();
+};
+
+loadData();
+
 app.post('/api/login', async (req, res) => {
     const {username, password} = req.body;
     
-    withDB(async (db) => {
+    withDB(async db => {
         const userInfo = await db.collection('users').findOne({username, password});
         
         if (!_.isNull(userInfo)) {
@@ -42,7 +56,7 @@ app.post('/api/login', async (req, res) => {
 app.post('/api/signup', async (req, res) => {
     const {username, password} = req.body;
     
-    withDB(async (db) => {
+    withDB(async db => {
         const existingUser = await db.collection('users').findOne({username});
         
         if (_.isNull(existingUser)) {
