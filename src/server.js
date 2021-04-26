@@ -74,7 +74,7 @@ app.post('/api/signup', async (req, res) => {
 app.post('/api/new-article', async (req, res) => {
     let article = req.body;
     withDB(async db => {
-        const articleInfo = articleService.addSlug(article);
+        const articleInfo = articleService.getSlug(article);
 
         const insertInfo = await db.collection('articles').insertOne({...articleInfo});
         if (!_.isUndefined(insertInfo.insertedId)) {

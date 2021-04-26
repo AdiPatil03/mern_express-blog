@@ -31,39 +31,7 @@ export default class ArticleService {
         return;
 	}
 
-	// allArchives(articles) {
-    //     if (articles.length > 0) {
-    //         let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    //         let archives = [];
-    //         articles.sort((a,b) => b.createdAt - a.createdAt);
-    //         articles.forEach(article => {
-    //             let date = new Date(article.createdAt)
-    //             archives.push(`${months[date.getMonth()]} ${date.getFullYear()}`);
-    //         });
-    //         if (archives.length > 0) {	
-    //             return archives.filter((v, i, a) => a.indexOf(v) === i);  		
-    //         }
-    //     }
-        
-    //     return;
-	// }
-
-	// allTags(articles) {
-    //     if(articles.length > 0) {
-    //         let tags = [];
-
-    //         articles.forEach(article => {
-    //             tags = tags.concat(article.tags);
-    //         });
-    //         if (tags.length > 0) {	
-    //             return tags.filter((v, i, a) => a.indexOf(v) === i);		  		
-    //         }
-    //     }
-           
-    //     return;
-	// }
-
-	addSlug(article) {
+	getSlug(article) {
         let slug = this.slugify(article.title);
         article.slug = slug;
         return article;

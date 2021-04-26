@@ -1,11 +1,11 @@
 [
     {
         "title": "React Hooks",
-        "body": "Hooks are functions that let developers hook into React state and lifecycle features from function components. Hooks don’t work inside classes — they let you use React without classes. React provides a few built-in hooks like useState, useContext, useReducer and useEffect. Others are documented in the Hooks API Reference. useState , useReducer and useEffect, which are the most used, are for controlling state and side effects respectively. Hooks should only be called at the top level (not inside loops or if statements). Hooks should only be called from React function components, not normal functions or class components. Although these rules can't be enforced at runtime, code analysis tools such as linters can be configured to detect many mistakes during development. The rules apply to both usage of hooks and the implementation of custom hooks, which may call other hooks.",
+        "body": "Hooks are functions that let developers hook into React state and lifecycle features from function components. Hooks don’t work inside classes — they let you use React without classes. React provides a few built-in hooks like useState, useContext, useReducer and useEffect. Others are documented in the Hooks API Reference. useState , useReducer and useEffect, which are the most used, are for controlling state and side effects respectively. Hooks should only be called at the top level (not inside loops or if statements). Hooks should only be called from React function components, not normal functions or class components. Although these rules can't be enforced at runtime, code analysis tools such as linters can be configured to detect many mistakes during development. The rules apply to both usage of hooks and the implementation of custom hooks, which may call other hooks. Hooks are functions that let developers hook into React state and lifecycle features from function components. Hooks don’t work inside classes — they let you use React without classes. React provides a few built-in hooks like useState, useContext, useReducer and useEffect. Others are documented in the Hooks API Reference. useState , useReducer and useEffect, which are the most used, are for controlling state and side effects respectively. Hooks should only be called at the top level (not inside loops or if statements). Hooks should only be called from React function components, not normal functions or class components. Although these rules can't be enforced at runtime, code analysis tools such as linters can be configured to detect many mistakes during development. The rules apply to both usage of hooks and the implementation of custom hooks, which may call other hooks. Hooks are functions that let developers hook into React state and lifecycle features from function components. Hooks don’t work inside classes — they let you use React without classes. React provides a few built-in hooks like useState, useContext, useReducer and useEffect. Others are documented in the Hooks API Reference. useState , useReducer and useEffect, which are the most used, are for controlling state and side effects respectively. Hooks should only be called at the top level (not inside loops or if statements). Hooks should only be called from React function components, not normal functions or class components. Although these rules can't be enforced at runtime, code analysis tools such as linters can be configured to detect many mistakes during development. The rules apply to both usage of hooks and the implementation of custom hooks, which may call other hooks. Hooks are functions that let developers hook into React state and lifecycle features from function components. Hooks don’t work inside classes — they let you use React without classes. React provides a few built-in hooks like useState, useContext, useReducer and useEffect. Others are documented in the Hooks API Reference. useState , useReducer and useEffect, which are the most used, are for controlling state and side effects respectively. Hooks should only be called at the top level (not inside loops or if statements). Hooks should only be called from React function components, not normal functions or class components. Although these rules can't be enforced at runtime, code analysis tools such as linters can be configured to detect many mistakes during development. The rules apply to both usage of hooks and the implementation of custom hooks, which may call other hooks.",
         "author": "Admin",
         "slug": "react-hooks",
         "tags": ["mern-blog", "react", "hooks"],
-        "createdAt": "July 1, 2017"
+        "createdAt": "June 1, 2020"
     },
     {
         "title": "Bootstrap Wiki",
@@ -13,7 +13,7 @@
         "author": "Aditya",
         "slug": "bootstrap-wiki",
         "tags": ["mern-blog", "bootstrap", "scss", "wiki"],
-        "createdAt": "August 17, 2017"
+        "createdAt": "April 17, 2020"
     },
     {
         "title": "React Redux",
@@ -21,7 +21,7 @@
         "author": "Admin",
         "slug": "react-redux",
         "tags": ["mern-blog", "react-redux", "redux", "state management"],
-        "createdAt": "December 1, 2017"
+        "createdAt": "December 1, 2019"
     },
     {
         "title": "React Internationalization",
@@ -29,7 +29,7 @@
         "author": "Aditya",
         "slug": "react-internationalization",
         "tags": ["mern-blog", "react-i18next", "i18n", "Internationalization"],
-        "createdAt": "August 17, 2017"
+        "createdAt": "May 23, 2021"
     },
     {
         "title": "Express Wiki",
@@ -37,7 +37,7 @@
         "author": "Admin",
         "slug": "express-wiki",
         "tags": ["mern-blog", "express", "NodeJS", "back-end"],
-        "createdAt": "December 1, 2017"
+        "createdAt": "March 1, 2020"
     },
     {
         "title": "MongoDB Wiki",
@@ -45,6 +45,6 @@
         "author": "Aditya",
         "slug": "mongodb-wiki",
         "tags": ["mern-blog", "MongoDB", "No SQL"],
-        "createdAt": "December 1, 2017"
+        "createdAt": "January 1, 2018"
     }
 ]
