@@ -4,6 +4,7 @@
 - Open cmd terminal and run mongod --dbpath=c:/data/db
 - Open another cmd terminal and run mongo
 - Go back to root directory and run **npm start**
+- Application will be deployed on http://localhost:3010
 
 # Initial dummy data loaded to mongoDB
 - I have added initial data to load for the application using some dummy data. So a total of 6 articles will be pushed to mongoDB.
